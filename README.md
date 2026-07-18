@@ -54,18 +54,30 @@ streamlit run app.py
 
 ## Project Structure
 
-TicketMind-/
+TicketMind/
+│
 ├── agents/
-│   ├── classifier_agent.py      # categorizes & assesses urgency
-│   ├── retrieval_agent.py       # searches knowledge base
+│   ├── __init__.py
+│   ├── classifier_agent.py      # categorizes ticket & assesses urgency/sentiment
+│   ├── retrieval_agent.py       # searches knowledge base for matching solution
 │   ├── decision_agent.py        # autonomous auto-reply vs escalate decision
-│   └── response_agent.py        # drafts customer reply / handoff note
+│   └── response_agent.py        # drafts customer reply / internal handoff note
+│
 ├── data/
-│   └── knowledge_base.py        # FAQ articles the agent searches
+│   ├── __init__.py
+│   └── knowledge_base.py        # hardcoded FAQ articles the agent searches
+│
 ├── utils/
-│   └── llm_client.py            # shared Gemini API wrapper
-├── app.py                       # Streamlit UI + orchestration
-└── requirements.txt
+│   └── llm_client.py            # shared Gemini API wrapper (google-genai SDK)
+│
+├── .streamlit/
+│   └── config.toml              # custom UI theme
+│
+├── app.py                       # Streamlit UI + agent orchestration
+├── requirements.txt             # project dependencies
+├── .env.example                 # template for required environment variables
+├── .gitignore
+└── README.md
 
 ## Future Enhancements
 
