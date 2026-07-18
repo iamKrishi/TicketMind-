@@ -54,6 +54,7 @@ streamlit run app.py
 
 ## Project Structure
 
+```
 TicketMind/
 │
 ├── agents/
@@ -78,6 +79,7 @@ TicketMind/
 ├── .env.example                 # template for required environment variables
 ├── .gitignore
 └── README.md
+```
 
 ## Future Enhancements
 
